@@ -15,7 +15,10 @@ export interface IViewToolsWidget {
 
 const VireToolsWidgetComponent = defineComponent({
   props: {
-    use: { type: Array, default: () => ['DESIGNABLE', 'JSONTREE', 'PREVIEW'] },
+    use: {
+      type: Array,
+      default: () => ['DESIGNABLE', 'JSONTREE', 'MARKUP', 'PREVIEW'],
+    },
   },
   setup(props) {
     const workbenchRef = useWorkbench()
@@ -72,6 +75,4 @@ const VireToolsWidgetComponent = defineComponent({
   },
 })
 
-export const ViewToolsWidget = observer(
-  VireToolsWidgetComponent
-)
+export const ViewToolsWidget = observer(VireToolsWidgetComponent)
